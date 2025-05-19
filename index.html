@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto DAAC</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Menú</h2>
+    <ul class="menu">
+      <li>
+        <span class="categoria" onclick="toggleSubmenu('cat1')">📘 Farmacos</span>
+        <ul class="submenu" id="cat1">
+          <li><a href="farm1.html">Benzodiacepinas</a></li>
+          <li><a href="farm2.html">Codeína</a></li>
+          <li><a href="farm3.html">Ritalin</a></li>
+          <li><a href="farm4.html">Tramadol</a></li>
+          <li><a href="farm5.html">Oxycodona Clorhidrato</a></li>
+        </ul>
+      </li>
+      <!--<li>
+        <span class="categoria" onclick="toggleSubmenu('cat2')">📘 Categoría 2</span>
+        <ul class="submenu" id="cat2">
+          <li><a href="cat1-sub1.html">Subcategoría 1</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 2</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 3</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 4</a></li>
+        </ul>
+      </li> -->
+      <li>
+        <a class="categoria" href="apartadoprofesional.html">📘 Apartado Profesional</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div class="logo">
+        <img src="img/duoc.png" alt="Logo DAAC" />
+      </div>
+      <div class="resumen">
+        <h1>Más allá del alivio</h1>
+        <p style="text-align: left;">
+          Se ha constatado un aumento significativo y preocupante en el consumo de medicamentos por fuera de sus indicaciones terapéuticas durante los últimos años. Esta tendencia abarca el uso indebido de fármacos sujetos a prescripción y aquellos de libre dispensación, empleados con fines recreativos o como forma de automedicación. Es importante destacar que este fenómeno no se circunscribe a un único contexto geográfico o socioeconómico, sino que se ha propagado a través de diversas poblaciones, con una notable incidencia en la población adolescente, lo que ha suscitado preocupación entre los profesionales de la salud y los educadores.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

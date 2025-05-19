@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto DAAC</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Menú</h2>
+    <ul class="menu">
+      <li>
+        <span class="categoria" onclick="toggleSubmenu('cat1')">📘 Farmacos</span>
+        <ul class="submenu" id="cat1">
+          <li><a href="farm1.html">Benzodiacepinas</a></li>
+          <li><a href="farm2.html">Codeína</a></li>
+          <li><a href="farm3.html">Ritalin</a></li>
+          <li><a href="farm4.html">Tramadol</a></li>
+          <li><a href="farm5.html">Oxycodona Clorhidrato</a></li>
+        </ul>
+      </li>
+      <!--<li>
+        <span class="categoria" onclick="toggleSubmenu('cat2')">📘 Categoría 2</span>
+        <ul class="submenu" id="cat2">
+          <li><a href="cat1-sub1.html">Subcategoría 1</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 2</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 3</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 4</a></li>
+        </ul>
+      </li> -->
+      <li>
+        <a class="categoria" href="apartadoprofesional.html">📘 Apartado Profesional</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div class="logo">
+        <img src="img/duoc.png" alt="Logo DAAC" />
+      </div>
+      <div class="resumen">
+        <h1>Benzodiacepinas</h1>
+        <h2 style="text-align: left;">Descripción y uso médico:</h2>
+                <p style="text-align: left;">
+                  Las benzodiacepinas son fármacos psicotrópicos utilizados para tratar la ansiedad, insomnio, convulsiones y otros trastornos del sistema nervioso. Actúan como depresores del sistema nervioso central.
+                </p>
+        <h2 style="text-align: left;">Riesgos y consecuencias del mal uso:</h2>
+                <p style="text-align: left;">
+                  Estos medicamentos tienen un alto riesgo de dependencia física y psicológica. Su uso prolongado o en altas dosis puede provocar sedación excesiva, deterioro cognitivo, alteraciones de la memoria, accidentes por caídas, y síndrome de abstinencia al suspender su consumo. Mezclarlas con alcohol o con otros depresores puede ser letal.
+                </p>
+        <h2 style="text-align: left;">Importancia de la concientización:</h2>
+                <p style="text-align: left;">
+                  Son frecuentemente automedicadas para “relajarse” o dormir, especialmente entre adolescentes bajo estrés. Es urgente generar conciencia sobre el hecho de que su uso sin control médico puede desembocar en adicción y consecuencias severas para la salud mental y física.
+                </p>
+      </div>
+      <div class="volver">
+        <a href="index.html">← Volver a la página principal</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

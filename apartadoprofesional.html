@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto DAAC</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Menú</h2>
+    <ul class="menu">
+      <li>
+        <span class="categoria" onclick="toggleSubmenu('cat1')">📘 Farmacos</span>
+        <ul class="submenu" id="cat1">
+          <li><a href="farm1.html">Benzodiacepinas</a></li>
+          <li><a href="farm2.html">Codeína</a></li>
+          <li><a href="farm3.html">Ritalin</a></li>
+          <li><a href="farm4.html">Tramadol</a></li>
+          <li><a href="farm5.html">Oxycodona Clorhidrato</a></li>
+        </ul>
+      </li>
+      <!--<li>
+        <span class="categoria" onclick="toggleSubmenu('cat2')">📘 Categoría 2</span>
+        <ul class="submenu" id="cat2">
+          <li><a href="cat1-sub1.html">Subcategoría 1</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 2</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 3</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 4</a></li>
+        </ul>
+      </li> -->
+      <li>
+        <a class="categoria" href="apartadoprofesional.html">📘 Apartado Profesional</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div class="logo">
+        <img src="img/duoc.png" alt="Logo DAAC" />
+      </div>
+      <div class="resumen">
+        <h1>Apartado Profesional</h1>
+        <p style="text-align: left;">
+          Como profesionales de salud y técnicos en química y farmacia estas son las cosas que se debe de tener en cuenta al dispensar estos tipos de fármacos 
+        </p>
+        <h2 style="text-align: left;">Verificación de la receta médica</h2>
+        <p style="text-align: left;">La receta debe estar completa y correctamente escrita, incluyendo</p>
+        <p style="text-align: left;">- Nombre completo del paciente.</p>
+
+        <p style="text-align: left;">- Identificación (RUT o cédula).</p>
+
+        <p style="text-align: left;">- Nombre del medicamento (principio activo y dosis).</p>
+
+        <p style="text-align: left;">- Dosis, frecuencia y duración del tratamiento.</p>
+
+        <p style="text-align: left;">- Cantidad exacta a dispensar.</p>
+
+        <p style="text-align: left;">- Fecha de emisión.</p>
+
+        <p style="text-align: left;">- Firma y timbre del médico. (Sin enmiendas o errores)</p>
+        <h2 style="text-align: left;">Identificación del paciente</h2>
+        <p style="text-align: left;">Confirmar la identidad del paciente (y/o su representante) con documento válido.</p>
+        <h2 style="text-align: left;">PARA RECETAS CHEQUES.</h2>
+        <h3 style="text-align: left;">Datos de la recetas</h3>
+        <p style="text-align: left;">Número de serie de la receta compuesta por una letra y números</p>
+        <h3 style="text-align: left;">Datos del médico</h3>
+        <p style="text-align: left;">El RUT debe indicar el número de RUT sin dígito verificador ni puntos, por ejemplo: 12345678, la visualización será de la siguiente manera: 12.345.678 (El DV corresponde al dígito verificador del RUT)</p>
+        <h3 style="text-align: left;">Datos del paciente</h3>
+        <p style="text-align: left;">El RUT debe indicar el número de RUT sin dígito verificador ni puntos, por ejemplo: 12345678, la visualización será de la siguiente manera: 12.345.678. En caso de que el paciente no sea chileno, debe indicar el número de pasaporte o documentación de origen correspondiente.(El DV corresponde al dígito verificador del RUT, puede seleccionarse o escribirse. Los valores aceptados son: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 y K.)</p>
+        <p style="text-align: left;">Los campos dirección y ciudad corresponden a la dirección del paciente señalado en la receta</p>
+        <h3 style="text-align: left;">Datos de prescripción</h3>
+        <p style="text-align: left;">El N° Registro corresponde al número del registro sanitario del medicamento, escrito de la siguiente forma: F-123 o N-123, sin indicar el año. Por ejemplo, el registro F-1373/18 debe ingresarse como F-1373. En caso de dudas puede consultar la página web http://registrosanitario.ispch.gob.cl/ </p>
+        <p style="text-align: left;">Nombre producto se cargará automáticamente al escribir el número de registro sanitario.</p>
+        <p style="text-align: left;">Presentación corresponde al tipo de envase del producto y su contenido de envase (unidades posológicas). Debe seleccionar de la lista desplegable que contiene los siguientes envases: _cajas (contenido de 2 a 30 u (unidades)) _frasco (contenido de 10 mL a 120 mL) _ampollas, frasco ampolla, cápsulas, cápsulas blandas, comprimidos, parches, supositorios, gramo (g), milígramos (mg) y mililitros (mL). </p>
+        <p style="text-align: left;">Cantidad corresponde al número de presentaciones del producto prescritas, por ejemplo: 3 cajas x 30 u</p>
+        <p style="text-align: left;">Posología corresponde a la indicación señalada por el médico</p>
+        <p style="text-align: left;">Fecha corresponde a la fecha consignada en la receta médica.</p>
+      </div>
+      <div class="volver">
+        <a href="index.html">← Volver a la página principal</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

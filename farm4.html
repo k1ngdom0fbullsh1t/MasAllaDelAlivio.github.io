@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto DAAC</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Menú</h2>
+    <ul class="menu">
+      <li>
+        <span class="categoria" onclick="toggleSubmenu('cat1')">📘 Farmacos</span>
+        <ul class="submenu" id="cat1">
+          <li><a href="farm1.html">Benzodiacepinas</a></li>
+          <li><a href="farm2.html">Codeína</a></li>
+          <li><a href="farm3.html">Ritalin</a></li>
+          <li><a href="farm4.html">Tramadol</a></li>
+          <li><a href="farm5.html">Oxycodona Clorhidrato</a></li>
+        </ul>
+      </li>
+      <!--<li>
+        <span class="categoria" onclick="toggleSubmenu('cat2')">📘 Categoría 2</span>
+        <ul class="submenu" id="cat2">
+          <li><a href="cat1-sub1.html">Subcategoría 1</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 2</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 3</a></li>
+          <li><a href="cat1-sub1.html">Subcategoría 4</a></li>
+        </ul>
+      </li> -->
+      <li>
+        <a class="categoria" href="apartadoprofesional.html">📘 Apartado Profesional</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div class="logo">
+        <img src="img/duoc.png" alt="Logo DAAC" />
+      </div>
+      <div class="resumen">
+        <h1>Tramadol</h1>
+        <h2 style="text-align: left;">Descripción y uso médico:</h2>
+                <p style="text-align: left;">
+                  El tramadol es un analgésico opioide utilizado para tratar el dolor de moderado a severo. Actúa sobre los receptores opioides del sistema nervioso central y también inhibe la recaptación de serotonina y noradrenalina.
+                </p>
+        <h2 style="text-align: left;">Riesgos y consecuencias del mal uso:</h2>
+                <p style="text-align: left;">
+                  Aunque se considera un opioide "más suave", el tramadol tiene un alto potencial de dependencia, especialmente cuando se usa sin supervisión médica. Su abuso puede provocar somnolencia, mareos, convulsiones, depresión respiratoria y síndrome de abstinencia. Además, puede interactuar con otros medicamentos, aumentando el riesgo de síndrome serotoninérgico, una condición potencialmente mortal.
+                </p>
+        <h2 style="text-align: left;">Importancia de la concientización:</h2>
+                <p style="text-align: left;">
+                  La automedicación con tramadol es peligrosa, especialmente entre jóvenes que lo utilizan buscando efectos eufóricos. Es fundamental educar sobre sus riesgos, ya que su percepción como un analgésico "seguro" contribuye a su uso indebido.
+                </p>
+      </div>
+      <div class="volver">
+        <a href="index.html">← Volver a la página principal</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
