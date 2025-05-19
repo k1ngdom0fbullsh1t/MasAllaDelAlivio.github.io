@@ -132,5 +132,63 @@ body {
     background-color: #3399ff;
     color: #ffffff;
   }
+
+#loading-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #333;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10001;
+  display: none; /* solo visible en pantallas pequeñas */
+}
+
+/* Sidebar oculto por defecto en móviles */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
   
   
