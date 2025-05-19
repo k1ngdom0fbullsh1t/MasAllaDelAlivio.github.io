@@ -4,17 +4,6 @@ function toggleSubmenu(id) {
   }
   
 
-/*document.querySelectorAll('.menu a').forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault(); // Evita el cambio inmediato de página
-    const href = this.getAttribute('href');
-    document.getElementById('loading-overlay').style.display = 'flex';
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 500); // Espera 0.5 segundos antes de ir a la página
-  });
-});*/
 document.querySelectorAll('.menu a').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();
@@ -27,8 +16,8 @@ document.querySelectorAll('.menu a').forEach(link => {
   });
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.querySelector('.sidebar');
+var menuToggle = document.getElementById('menu-toggle');
+var sidebar = document.querySelector('.sidebar');
 
 menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('active');

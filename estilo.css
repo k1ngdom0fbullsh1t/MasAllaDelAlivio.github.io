@@ -153,4 +153,58 @@ body {
 
 
   
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    background-attachment: scroll;
+  }
+
+  .sidebar {
+    width: 100%;
+    box-shadow: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .main-content {
+    padding: 20px;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .logo img {
+    max-width: 120px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .resumen h1 {
+    font-size: 22px;
+  }
+
+  .resumen p {
+    font-size: 14px;
+  }
+
+  .categoria {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .submenu li a {
+    font-size: 14px;
+  }
+
+  .volver a {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
   
