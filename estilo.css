@@ -202,10 +202,18 @@ body {
     width:50px;
     height:80px;
   }
+  .rectangle2 {
+    width:80px;
+    height:50px;
+  }
   .square {
     width:50px;
     height:50px;
   }
+  .boleta {
+    width:300px;
+    height:170px;
+}
 
 }
 
