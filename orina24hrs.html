@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orina24hrs - Salud Explicada 2.0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="img/torina24.png" alt="Logo Salud Explicada 2.0" class="logo">
+    </header>
+    <main class="instructions" id="instructions">
+        <section>
+            <h2>El examen de orina de 24 horas mide cómo funcionan tus riñones y detecta problemas. Te explico cómo hacerlo paso a paso:</h2>
+        </section>
+        <section>
+            <h3>Inicio del examen</h3>
+            <p>El funcionario te entregará un envase esteril y a veces con productos especiales para mantener la orina que entrará. De vuelta en casa   esperaras al día siguiente, al levantarte a orinar, NO IMPORTARÁ tú primera orina, la descartaras, pero anotaras la hora en que lo hiciste. No lo olvides!!</p>
+        </section>
+        <section>
+            <h3>Recolecta</h3>
+            <p>Para ir llenando el envase luego de tu primera orina, cada vez que vayas a orinar irá dentro. Intenta mantener el envase en algún lugar frío. Esto hasta el día siguiente a la MISMA HORA que eliminaste tu primera orina.</p>
+            <p>Si!! está vez irá dentro, completando tu ciclo de 24 horas.</p>
+        </section>
+        <section>
+            <h3>Entrega</h3>
+            <p>Felicidades lo lograste, mantenlo frío (nunca congelado) hasta que debas llevarlo a tu establecimiento de salud en el cual te pidieron entregarlo.</p>
+        </section>
+        <section style="text-align: center;">
+            <button onclick="narrarTexto()" class="control-button">
+                <img src="img/play.png" alt="Reproducir Narración" id="startButton" class="back-icon">
+            </button>
+            <button onclick="pausarNarracion()" class="control-button">
+                <img src="img/pause.png" alt="Pausar Narración" id="pauseButton" class="back-icon">
+            </button>
+        </section>
+        <section style="text-align: center;">
+            <a href="index.html">
+                <img src="img/back.png" alt="Volver al Menú" class="back-icon">
+            </a> 
+        </section>
+    </main>
+
+    <script>
+        let narrador = window.speechSynthesis;
+        let mensaje; // Esta variable guardará la instancia actual del mensaje para controlarlo
+        let textoCompleto = "";
+        let partes = [];
+        
+        window.onload = function() {
+            // Aquí puedes llamar a la función si deseas que empiece automáticamente
+            narrarTexto();
+        };
+        
+        function narrarTexto() {
+            const textoInicial = "SALUD EXPLICADA: ORINA 24 HORAS";
+            const contenido = document.getElementById("instructions").innerText;
+            textoCompleto = `${textoInicial}. ${contenido}`;
+        
+            // Dividir el texto en partes si es muy largo
+            partes = textoCompleto.match(/.{1,200}/g);
+        
+            if (narrador.speaking) {
+                narrador.cancel(); // Cancelar cualquier narración anterior
+            }
+        
+            narrarParte(0);
+        }
+        
+        function narrarParte(index) {
+            if (index < partes.length) {
+                mensaje = new SpeechSynthesisUtterance(partes[index]);
+                mensaje.lang = "es-ES";
+                mensaje.rate = 1;
+                mensaje.pitch = 1;
+        
+                mensaje.onend = () => narrarParte(index + 1);
+                mensaje.onerror = (e) => console.error("Error en la narración:", e);
+        
+                narrador.speak(mensaje);
+            } else {
+                console.log("Narración completa.");
+            }
+        }
+        
+        function pausarNarracion() {
+            if (narrador.speaking) {
+                narrador.pause();
+                console.log("Narración pausada.");
+            }
+        }
+        
+        function reanudarNarracion() {
+            if (narrador.paused) {
+                narrador.resume();
+                console.log("Narración reanudada.");
+            }
+        }
+        
+    </script>
+</body>
+</html>

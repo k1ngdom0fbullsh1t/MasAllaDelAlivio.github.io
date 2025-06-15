@@ -44,14 +44,22 @@
       <div class="logo">
         <img src="img/duoc.png" alt="Logo DAAC" />
       </div>
-      <div class="resumen">
+      <div class="resumen" id="instructions">
         <h1>Portafolio</h1>
         <p style="text-align: left;">
           Se ha constatado un aumento significativo y preocupante en el consumo de medicamentos por fuera de sus indicaciones terapéuticas durante los últimos años. Esta tendencia abarca el uso indebido de fármacos sujetos a prescripción y aquellos de libre dispensación, empleados con fines recreativos o como forma de automedicación. Es importante destacar que este fenómeno no se circunscribe a un único contexto geográfico o socioeconómico, sino que se ha propagado a través de diversas poblaciones, con una notable incidencia en la población adolescente, lo que ha suscitado preocupación entre los profesionales de la salud y los educadores.
         </p>
-        <div class="volver">
+      </div>
+      <div>
+        <button onclick="narrarTexto()" class="control-button">
+          <img src="img/play.png" alt="Reproducir Narración" id="startButton" class="back-icon">
+        </button>
+        <button onclick="pausarNarracion()" class="control-button">
+          <img src="img/pause.png" alt="Pausar Narración" id="pauseButton" class="back-icon">
+        </button>
+      </div>
+      <div class="volver">
           <a href="index.html">← Volver a la página principal</a>
-        </div>
       </div>
   </div>
   <div id="loading-card" style="display: none;">
@@ -59,5 +67,49 @@
   </div>
 
   <script src="script.js"></script>
+    <script>
+let narrador = window.speechSynthesis;
+let mensaje;
+let textoCompleto = "";
+
+function narrarTexto() {
+  if (narrador.speaking) {
+    narrador.cancel(); // Cancela cualquier narración activa
+  }
+
+  const textoInicial = " ";
+  const contenido = document.getElementById("instructions").innerText.trim();
+  textoCompleto = `${textoInicial} ${contenido}`;
+
+  mensaje = new SpeechSynthesisUtterance(textoCompleto);
+  mensaje.lang = "es-ES";
+  mensaje.rate = 1;
+  mensaje.pitch = 1;
+
+  mensaje.onend = () => {
+    console.log("Narración completa.");
+  };
+
+  mensaje.onerror = (e) => {
+    console.error("Error en la narración:", e);
+  };
+
+  narrador.speak(mensaje);
+}
+
+function pausarNarracion() {
+  if (narrador.speaking && !narrador.paused) {
+    narrador.pause();
+    console.log("Narración pausada.");
+  }
+}
+
+function reanudarNarracion() {
+  if (narrador.paused) {
+    narrador.resume();
+    console.log("Narración reanudada.");
+  }
+}
+</script>
 </body>
 </html>

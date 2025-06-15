@@ -44,7 +44,7 @@
       <div class="logo">
         <img src="img/duoc.png" alt="Logo DAAC" />
       </div>
-      <div class="resumen">
+      <div class="resumen" id="instructions">
         <h1>Apartado Profesional</h1>
         <p style="text-align: left;">
           Recuerda como profesionales de la salud y técnico en química y farmacia debemos siempre verificar:
@@ -59,6 +59,14 @@
           <li>La receta no debe superar los 30 días desde que esta fue emitida.</li>
         </ul>
       </div>
+      <div>
+        <button onclick="narrarTexto()" class="control-button">
+          <img src="img/play.png" alt="Reproducir Narración" id="startButton" class="back-icon">
+        </button>
+        <button onclick="pausarNarracion()" class="control-button">
+          <img src="img/pause.png" alt="Pausar Narración" id="pauseButton" class="back-icon">
+        </button>
+      </div>
       <div class="volver">
         <a href="index.html">← Volver a la página principal</a>
       </div>
@@ -69,5 +77,49 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+let narrador = window.speechSynthesis;
+let mensaje;
+let textoCompleto = "";
+
+function narrarTexto() {
+  if (narrador.speaking) {
+    narrador.cancel(); // Cancela cualquier narración activa
+  }
+
+  const textoInicial = " ";
+  const contenido = document.getElementById("instructions").innerText.trim();
+  textoCompleto = `${textoInicial} ${contenido}`;
+
+  mensaje = new SpeechSynthesisUtterance(textoCompleto);
+  mensaje.lang = "es-ES";
+  mensaje.rate = 1;
+  mensaje.pitch = 1;
+
+  mensaje.onend = () => {
+    console.log("Narración completa.");
+  };
+
+  mensaje.onerror = (e) => {
+    console.error("Error en la narración:", e);
+  };
+
+  narrador.speak(mensaje);
+}
+
+function pausarNarracion() {
+  if (narrador.speaking && !narrador.paused) {
+    narrador.pause();
+    console.log("Narración pausada.");
+  }
+}
+
+function reanudarNarracion() {
+  if (narrador.paused) {
+    narrador.resume();
+    console.log("Narración reanudada.");
+  }
+}
+</script>
 </body>
 </html>
